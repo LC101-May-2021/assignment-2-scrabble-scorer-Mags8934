@@ -89,14 +89,14 @@ const scoringAlgorithms = [
 ];
 
 function scorerPrompt() {
-  let userAlgorithmSelection = 0;
+  let userAlgorithmSelection = '';
   userAlgorithmSelection = input.question(`Which scoring algorithm would you like to use?\n\n0 - Simple: One point per character\n1 - Vowel Bonus: Vowels are worth 3 points\n2 - Scrabble: Uses scrabble point system\nEnter 0, 1, 2: `);
-    if (userAlgorithmSelection === 0) {
-      console.log('Score for ' + word.toLowerCase() + "': " + simpleScore());
-    } else if (userAlgorithmSelection === 1) {
-        console.log("Score for '" + word.toLowerCase() + "': " + vowelBonusScore()); 
-        } else if (userAlgorithmSelection === 2) {
-            console.log("Score for '" + word.toLowerCase() + "': " + scrabbleScore()) 
+    if (Number(userAlgorithmSelection) === 0) {
+      console.log("Score for '" + word.toLowerCase() + "': " + Number(simpleScore()))
+    } else if (Number(userAlgorithmSelection) === 1) {
+        console.log("Score for '" + word.toLowerCase() + "': " + Number(vowelBonusScore())) 
+        } else if (Number(userAlgorithmSelection) === 2) {
+            console.log("Score for '" + word.toLowerCase() + "': " + Number(scrabbleScore())) 
             }
             return userAlgorithmSelection;
             };
@@ -114,11 +114,11 @@ function transform() {
 
 
 let newPointStructure = transform(oldPointStructure);
- //console.log(newPointStructure);
+console.log(newPointStructure);
+
 
 function runProgram() {
    initialPrompt();
-  //  newPointStructure;
    scorerPrompt();   
 }
 

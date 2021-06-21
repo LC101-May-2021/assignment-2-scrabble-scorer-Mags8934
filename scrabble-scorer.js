@@ -50,7 +50,7 @@ function vowelBonusScore() {
 	word = word.toUpperCase();
 	let total = 0;
 	for (let i = 0; i < word.length; i++) { 
-    if (word[i].includes('A') || word[i].includes('E') || word[i].includes('I') || word[i].includes('O') || word[i].includes('U')){
+    if (word[i].includes('A') || word[i].includes('E') || word[i].includes('I') || word[i].includes('O') || word[i].includes('U') || word[i].includes('a') || word[i].includes('e') || word[i].includes('i') || word[i].includes('o') || word[i].includes('u')){
       total += 3
     } else if (word[i].includes("B") || word[i].includes("C") || word[i].includes("D") || word[i].includes("F") || word[i].includes("G") || word[i].includes("H") || word[i].includes("J") || word[i].includes("K") || word[i].includes("L") || word[i].includes("M") || word[i].includes("N") || word[i].includes("P") || word[i].includes("Q") || word[i].includes("R") || word[i].includes("S") || word[i].includes("T") || word[i].includes("V") || word[i].includes("W") || word[i].includes("X") || word[i].includes("Y") || word[i].includes("Z")) {
         total += 1 
@@ -72,7 +72,7 @@ function scrabbleScore() {
       }
   }
   }
-  return Number(scrabbleScoreValue);
+  return scrabbleScoreValue;
 }
 
 
@@ -92,13 +92,13 @@ function scorerPrompt() {
   let userAlgorithmSelection = '';
   userAlgorithmSelection = input.question(`Which scoring algorithm would you like to use?\n\n0 - Simple: One point per character\n1 - Vowel Bonus: Vowels are worth 3 points\n2 - Scrabble: Uses scrabble point system\nEnter 0, 1, 2: `);
     if (Number(userAlgorithmSelection) === 0) {
-      console.log("Score for '" + word.toLowerCase() + "': " + Number(simpleScore()))
+      console.log("Score for '" + word.toLowerCase() + "': " + simpleScore())
     } else if (Number(userAlgorithmSelection) === 1) {
-        console.log("Score for '" + word.toLowerCase() + "': " + Number(vowelBonusScore())) 
+        console.log("Score for '" + word.toLowerCase() + "': " + vowelBonusScore()) 
         } else if (Number(userAlgorithmSelection) === 2) {
-            console.log("Score for '" + word.toLowerCase() + "': " + Number(scrabbleScore())) 
+            console.log("Score for '" + word.toLowerCase() + "': " + scrabbleScore()) 
             }
-            return userAlgorithmSelection;
+            return Number(userAlgorithmSelection);
             };
 
 
@@ -114,7 +114,7 @@ function transform() {
 
 
 let newPointStructure = transform(oldPointStructure);
-console.log(newPointStructure);
+// console.log(newPointStructure);
 
 
 function runProgram() {

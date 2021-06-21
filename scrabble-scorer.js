@@ -79,18 +79,18 @@ function scrabbleScore() {
 
 const scoringAlgorithms = [
   {
-    name: "Simple Score",
-    description: "Each letter is worth 1 point.",
+    name: 'Simple Score',
+    description: 'Each letter is worth 1 point.',
     scoringFunction: simpleScore()
   },
   {
-    name: "Bonus Vowels",
-    description: "Vowels are 3 pts, consonants are 1 pt.",
+    name: 'Bonus Vowels',
+    description: 'Vowels are 3 pts, consonants are 1 pt.',
     scoringFunction: vowelBonusScore()
   },
   {
-    name: "Scrabble",
-    description: "The traditional scoring algorithm.",
+    name: 'Scrabble',
+    description: 'The traditional scoring algorithm.',
     scoringFunction: scrabbleScore()
   }
 ];
@@ -99,7 +99,7 @@ function scorerPrompt() {
   let userAlgorithmSelection = '';
   userAlgorithmSelection = input.question(`Which scoring algorithm would you like to use?\n\n0 - Simple: One point per character\n1 - Vowel Bonus: Vowels are worth 3 points\n2 - Scrabble: Uses scrabble point system\nEnter 0, 1, 2: `);
     if (userAlgorithmSelection == 0) {
-      console.log("Score for '" + word.toLowerCase() + "': " + simpleScore());
+      console.log('Score for ' + word.toLowerCase() + "': " + simpleScore());
     } else if (userAlgorithmSelection == 1) {
         console.log("Score for '" + word.toLowerCase() + "': " + vowelBonusScore()); 
         } else if (userAlgorithmSelection == 2) {

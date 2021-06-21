@@ -50,7 +50,7 @@ function vowelBonusScore() {
 	word = word.toUpperCase();
 	let total = 0;
 	for (let i = 0; i < word.length; i++) { 
-    if (word[i].includes('A') || word[i].includes('E') || word[i].includes('I') || word[i].includes('O') || word[i].includes('U') || word[i].includes('a') || word[i].includes('e') || word[i].includes('i') || word[i].includes('o') || word[i].includes('u')){
+    if (word[i].includes('A') || word[i].includes('E') || word[i].includes('I') || word[i].includes('O') || word[i].includes('U')){
       total += 3
     } else if (word[i].includes("B") || word[i].includes("C") || word[i].includes("D") || word[i].includes("F") || word[i].includes("G") || word[i].includes("H") || word[i].includes("J") || word[i].includes("K") || word[i].includes("L") || word[i].includes("M") || word[i].includes("N") || word[i].includes("P") || word[i].includes("Q") || word[i].includes("R") || word[i].includes("S") || word[i].includes("T") || word[i].includes("V") || word[i].includes("W") || word[i].includes("X") || word[i].includes("Y") || word[i].includes("Z")) {
         total += 1 
@@ -102,7 +102,7 @@ function scorerPrompt() {
             };
 
 
-//let letter = '';
+
 function transform() {
   let letter = {};
   for (let points in oldPointStructure) {

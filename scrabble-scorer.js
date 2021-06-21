@@ -79,13 +79,13 @@ function scrabbleScore() {
 
 const scoringAlgorithms = [
   {
-    name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: simpleScore() 
+    name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: simpleScore 
     },
   {
-    name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scoringFunction: vowelBonusScore()
+    name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scoringFunction: vowelBonusScore
   },
   {
-    name: 'Scrabble', description: 'The traditional scoring algorithm.', scoringFunction: scrabbleScore()
+    name: 'Scrabble', description: 'The traditional scoring algorithm.', scoringFunction: scrabbleScore
   }
 ];
 
@@ -115,11 +115,11 @@ function transform() {
 
 
 let newPointStructure = transform(oldPointStructure);
-// console.log(newPointStructure);
+ //console.log(newPointStructure);
 
 function runProgram() {
    initialPrompt();
-   newPointStructure;
+  //  newPointStructure;
    scorerPrompt();   
 }
 
@@ -137,4 +137,3 @@ module.exports = {
 	runProgram: runProgram,
 	scorerPrompt: scorerPrompt
 };
-

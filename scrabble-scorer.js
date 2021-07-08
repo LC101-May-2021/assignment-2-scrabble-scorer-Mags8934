@@ -40,13 +40,13 @@ console.log(oldScrabbleScorer(word));
 // your job is to finish writing these functions and variables that we've named //
 // don't change the names or your program won't work as expected. //
 
-function simpleScore() {
+function simpleScore(word) {
   let simpleScoreValue = 0; 
     simpleScoreValue += Number(word.length); 
   return simpleScoreValue;
  };
 
-function vowelBonusScore() {
+function vowelBonusScore(word) {
 	word = word.toLowerCase();
 	let total = 0;
 	for (let i = 0; i < word.length; i++) { 
@@ -59,7 +59,7 @@ function vowelBonusScore() {
 	  return total;
 	}
 
-function scrabbleScore() {
+function scrabbleScore(word) {
   word = word.toLowerCase();
   let scrabbleScoreValue = 0;
 
@@ -92,11 +92,11 @@ function scorerPrompt() {
   let userAlgorithmSelection = '';
   userAlgorithmSelection = input.question(`Which scoring algorithm would you like to use?\n\n0 - Simple: One point per character\n1 - Vowel Bonus: Vowels are worth 3 points\n2 - Scrabble: Uses scrabble point system\nEnter 0, 1, 2: `);
     if (Number(userAlgorithmSelection) === 0) {
-      console.log("Score for '" + word.toLowerCase() + "': " + simpleScore())
+      console.log("Score for '" + word.toLowerCase() + "': " + simpleScore(word))
     } else if (Number(userAlgorithmSelection) === 1) {
-        console.log("Score for '" + word.toLowerCase() + "': " + vowelBonusScore()) 
+        console.log("Score for '" + word.toLowerCase() + "': " + vowelBonusScore(word)) 
         } else if (Number(userAlgorithmSelection) === 2) {
-            console.log("Score for '" + word.toLowerCase() + "': " + scrabbleScore()) 
+            console.log("Score for '" + word.toLowerCase() + "': " + scrabbleScore(word)) 
             }
             return Number(userAlgorithmSelection);
             };
